@@ -3,8 +3,6 @@ window.onload = function() {
     startGame();
   }
 }
-
-
   
   function drawBoard () {
     // on récupère le canvas 
@@ -48,7 +46,6 @@ window.onload = function() {
   }
 
   // DESSINER LA VOITURE
-
   function draw(car) {
     // on récupère le canvas 
     var ctx = document.getElementById("game").getContext("2d");
@@ -71,7 +68,6 @@ window.onload = function() {
     updateCanvas();
   };
 
-
   //UpdateCanvas permet de raffraîchir l'écran pour afficher la nouvelle frame de l'animation
   function updateCanvas() {
     draw(car);
@@ -88,6 +84,24 @@ window.onload = function() {
 
 /*____________________________________________________ */
 
+// Définit la longueur et la position initiale d'un obstacle
+var myObstacles = [];
+
+var obstacle = {
+  ctx: document.getElementById("game").getContext("2d"),
+  width: Math.floor(Math.random()* (180 - 100)) + 100,
+  x: Math.floor(Math.random() * ((340-width) - 60)) + 60,
+  y: 0,
+
+  ctx.fillStyle = "#7D140C",
+  ctx.fillRect(x, 0, width, 40),
+};
+
+
+
+/*____________________________________________________ */
+
+/*
 var myObstacles = [];
 
 
@@ -105,7 +119,7 @@ var myObstacles = [];
       ctx.fillRect(this.x, this.y, this.width, this.height);
 
       
-    }*/
+    }
   
     this.newPos = function () {
       this.y += this.speedY;
@@ -116,3 +130,4 @@ var myObstacles = [];
 
  width = Math.floor(Math.random()*180);
  x = Math.floor(Math.random() * ((340-width) - 60)) + 60;
+*/
